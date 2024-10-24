@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet - Add Item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container-fluid {
+            display: flex;
+        }
+        /* Navigation bar styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+        .btn-custom {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!-- Navigation Sidebar -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Add Item Page</a>
+        <a href="purchase.html">Purchase Page</a>
+        <a href="walletManagement.html">Wallet Management Page</a>
+        <a href="#" id="signoutBtn">Signout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card p-4">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Add Item to Wallet</h2>
+                        <form id="addItemForm">
+                            <div class="mb-3">
+                                <label for="itemType" class="form-label">Select Item Type</label>
+                                <select class="form-select" id="itemType" name="itemType" required>
+                                    <option value="card">Credit/Debit Card</option>
+                                    <option value="ticket">Ticket/Pass</option>
+                                    <option value="password">Password</option>
+                                </select>
+                            </div>
+
+                            <!-- Credit/Debit Card Fields -->
+                            <div id="cardFields" class="item-fields" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="cardNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" pattern="\d{16}" placeholder="16-digit card number" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="expiryDate" class="form-label">Expiration Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" name="cvv" pattern="\d{3}" placeholder="3-digit CVV" required>
+                                </div>
+                            </div>
+
+                            <!-- Ticket/Pass Fields -->
+                            <div id="ticketFields" class="item-fields" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="ticketType" class="form-label">Ticket Type</label>
+                                    <input type="text" class="form-control" id="ticketType" name="ticketType" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ticketDate" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="ticketDate" name="ticketDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ticketTime" class="form-label">Time</label>
+                                    <input type="time" class="form-control" id="ticketTime" name="ticketTime" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ticketPlace" class="form-label">Place</label>
+                                    <input type="text" class="form-control" id="ticketPlace" name="ticketPlace" required>
+                                </div>
+                            </div>
+
+                            <!-- Password Fields -->
+                            <div id="passwordFields" class="item-fields" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="website" class="form-label">Website</label>
+                                    <input type="text" class="form-control" id="website" name="website" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-custom w-100">Add Item</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="addItem.js"></script>
+</body>
+</html>

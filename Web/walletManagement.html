@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet - Wallet Management Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container-fluid {
+            display: flex;
+        }
+        .sidebar {
+            width: 350px;
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!-- Navigation Sidebar -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="addItem.html">Add Item Page</a>
+        <a href="purchase.html">Purchase Page</a>
+        <a href="walletManagement.html">Wallet Management Page</a>
+        <a href="#" id="signoutBtn">Signout</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h2>Wallet Management Page</h2>
+
+                <!-- Current Wallet Balance -->
+                <div class="card mb-4 p-4">
+                    <h3>Your Wallet Balance: <span id="currentBalance"></span></h3>
+                </div>
+
+                <!-- Add Funds Section -->
+                <div class="card p-4 mb-4">
+                    <h3>Add Funds to Your Wallet</h3>
+                    <input type="number" id="addFundsAmount" class="form-control" placeholder="Enter amount" min="1" />
+                    <button id="addFundsBtn" class="btn btn-success mt-3">Add Funds</button>
+                </div>
+
+                <!-- Recent Transactions Section -->
+                <div class="card mt-4">
+                    <h3>Recent Transactions</h3>
+                    <ul class="list-group" id="transactionsList"></ul>
+                </div>
+                
+                <div class="card mt-4">
+                    <h3>Recent Purchases</h3>
+                    <ul class="list-group" id="purchasesList"></ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="walletManagement.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+        .btn-custom {
+            background-color: #45a848;
+            color: white;
+        }
+        .btn-option {
+            background-color: #007BFF;
+            color: white;
+        }
+        .heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="heading">Digital Wallet</h1>
+            <div id="optionsCard" class="card p-4">
+                <div class="card-body text-center">
+                    <h2>Select an Option</h2>
+                    <button id="signupBtn" class="btn btn-option w-100 mt-3">Sign Up</button>
+                    <button id="loginBtn" class="btn btn-option w-100 mt-3">Login</button>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signupCard" class="card p-4 mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="balance" class="form-label">Initial Balance (Min Rs.5000)</label>
+                            <input type="number" class="form-control" id="balance" min="5000" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Sign Up</button>
+                        <button type="button" id="backToOptionsFromSignup" class="btn btn-secondary w-100 mt-2">Back</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginCard" class="card p-4 mt-4" style="display: none;">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Login</h2>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Login</button>
+                        <button type="button" id="backToOptionsFromLogin" class="btn btn-secondary w-100 mt-2">Back</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="wallet.js"></script>
+</body>
+</html>
